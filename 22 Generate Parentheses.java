@@ -29,8 +29,8 @@ public class Solution {
         helper(left - 1, right, solution + "(", list);  // 向左下递归
         helper(left, right - 1, solution + ")", list);  // 向右下递归
 
-        // 这里不需要remove左右括号，因为所有答案集的处理都在叶子节点。
-        // 因为在每一层的时候，只有深度h个字符在solution中。
+        // 这里不需要remove左右括号，因为这里不是用的list，而是String！！
+        // 在每一层的时候，只有深度h个字符在solution中。
         // 从左子树返回到父节点，再遍历到右子树时，左子树的solution对右子树没有影响。
         
     }
