@@ -1,0 +1,27 @@
+/*
+
+Given an array of non-negative integers, you are initially positioned at the first index of the array.
+Each element in the array represents your maximum jump length at that position.
+Determine if you are able to reach the last index.
+
+For example:
+A = [2,3,1,1,4], return true.
+A = [3,2,1,0,4], return false.
+
+*/
+
+public class Solution {
+    public boolean canJump(int[] nums) {
+        int range = 0;
+        for(int i = 0; i < nums.length && i <= range; i++){
+            for(int j = range; j <= i + nums[i] && j < nums.length; j++){
+                range = j;
+            }
+        }
+        return range >= nums.length - 1;
+    }
+}
+
+动态规划，用boolean数组记录是否可以jump到第i个数字
+优化：只用一个变量记录可以jump到的最远位置
+
