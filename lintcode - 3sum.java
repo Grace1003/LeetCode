@@ -40,7 +40,7 @@ public class Solution {
                 } else {
                     right--;
                 }
-                // 跳过重复数字
+                // 跳过重复数字，注意条件
                 while (left != i + 1 && left < right && numbers[left] == numbers[left - 1]){
                     left++;
                 }
